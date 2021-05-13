@@ -1,3 +1,56 @@
 <resources>
-    <string name="app_name">SeniorProjectApp</string>
+    <string name="app_name">Subcept</string>
+    <string name="home_page_title">My Subscriptions</string>
+    <string name="no_subscriptions_added">No Subscriptions Added </string>
+    <string name="create_a_new_subscription">Add your first subscription by clicking the plus button</string>
+    <string name="app_icon_content_description">App Icon</string>
+    <string name="new_subscription_activity_title">Add Subscriptions</string>
+    <string name="action_settings">Settings</string>
+    <string name="info">info</string>
+    <string name="monthly_payment">Monthly payment: $</string>
+    <string name="search_title">Search&#8230;</string>
+    <string name="search_hint">Search&#8230;</string>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <string-array name="billing_cycles">
+        <item>Weekly</item>
+        <item>Monthly</item>
+        <item>Quarterly</item>
+        <item>Yearly</item>
+    </string-array>
+
+    <string-array name="reminders">
+        <item>Never</item>
+        <item>1 day before</item>
+        <item>2 days before</item>
+        <item>3 days before</item>
+        <item>1 week before</item>
+        <item>2 weeks before</item>
+        <item>1 month before</item>
+    </string-array>
+
+    <string-array name="months">
+        <item>Jan</item>
+        <item>Feb</item>
+        <item>Mar</item>
+        <item>Apr</item>
+        <item>May</item>
+        <item>Jun</item>
+        <item>Jul</item>
+        <item>Aug</item>
+        <item>Sep</item>
+        <item>Oct</item>
+        <item>Nov</item>
+        <item>Dec</item>
+
+    </string-array>
+    <string name="add_subscription_title">Add subscription</string>
+    <string name="create_subscription">create subscription</string>
+    <string name="delete">DELETE</string>
+    <string name="cancel">CANCEL</string>
+    <string name="edit_subscription_title">Edit subscription</string>
+    <string name="okay">OK</string>
+    <string name="delete_subscription">DELETE SUBSCRIPTION</string>
+
 </resources>

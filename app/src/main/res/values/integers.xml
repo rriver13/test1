@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="icon_ids">
+
+        <item>@drawable/airplane</item>
+        <item>@drawable/android</item>
+        <item>@drawable/baby_trolley</item>
+        <item>@drawable/bank_note</item>
+        <item>@drawable/banking_donation_2</item>
+        <item>@drawable/beaker_science</item>
+        <item>@drawable/beauty_hand_soap</item>
+        <item>@drawable/beauty_lipstick</item>
+        <item>@drawable/wallet</item>
+        <item>@drawable/window_programming</item>
+        <item>@drawable/tram</item>
+        <item>@drawable/polo_shirt</item>
+        <item>@drawable/rewards_trophy_5</item>
+        <item>@drawable/scissors</item>
+        <item>@drawable/sport_dumbbell_1</item>
+        <item>@drawable/motorcycle_1</item>
+        <item>@drawable/network_laptop</item>
+        <item>@drawable/pencil_2</item>
+        <item>@drawable/places_home_3</item>
+        <item>@drawable/laptop_1</item>
+        <item>@drawable/match_stick</item>
+        <item>@drawable/health_ambulance</item>
+        <item>@drawable/health_heart_pulse</item>
+        <item>@drawable/helicopter</item>
+        <item>@drawable/hotel_bed_1</item>
+        <item>@drawable/flash</item>
+        <item>@drawable/food_plate_knife_fork</item>
+        <item>@drawable/graduation_hat</item>
+        <item>@drawable/content_book_2</item>
+        <item>@drawable/couch</item>
+        <item>@drawable/devices</item>
+        <item>@drawable/espresso_machine</item>
+        <item>@drawable/business_briefcase_cash</item>
+        <item>@drawable/car_2</item>
+        <item>@drawable/binoculars</item>
+        <item>@drawable/box_2</item>
+        <item>@drawable/building_6</item>
+        <item>@drawable/bus_2</item>
+
+    </array>
+</resources>

@@ -15,7 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SeniorProjectApp">
-        <activity android:name=".new_subscription_Activity"></activity>
+        <activity
+            android:name=".homepg1"
+            android:label="@string/title_activity_homepg1"></activity>
+        <activity android:name=".new_subscription_Activity" />
 
         <receiver android:name=".AlarmReceiver" />
 
@@ -28,8 +31,8 @@
         </activity>
         <activity android:name=".user_register" />
         <activity android:name=".forgot" />
-        <activity android:name=".homepg"></activity>
-        <activity android:name=".user_Profile" />
+        <activity android:name=".homepg" />
+<!--        <activity android:name=".user_Profile" />-->
 
         <meta-data
             android:name="preloaded_fonts"

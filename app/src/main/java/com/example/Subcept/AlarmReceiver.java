@@ -111,20 +111,18 @@ public class AlarmReceiver extends BroadcastReceiver {
         long time  = intent.getLongExtra("time"  , -1);
         int  index = intent.getIntExtra ("index" , -1);
 
-        SubscriptionsDatabase DB = new SubscriptionsDatabase(context);
-
         long today = Subscriptions.today();
 
-        Subscriptions setAlarm = DB.getSubscriptions()[index];
+
 
         long nTime;
+        Subscriptions setAlarm = null;
         do{
             nTime = setAlarm.generateNextBillingDate();
         }while(Subscriptions.today() > nTime);
 
         setAlarm.setNextBillingDate(nTime);
-        DB.replaceSubscription(setAlarm, index);
-        DB.setAlarmForNotification(index, true);
+
 
         createNotification(context, id, setAlarm);
 

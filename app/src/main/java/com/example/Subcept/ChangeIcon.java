@@ -69,7 +69,7 @@ public class ChangeIcon extends DialogFragment {private final ArrayList<OnFinish
 }
 
 class IconArrayAdapter extends ArrayAdapter<Integer> {
-    Context context;
+    final Context context;
 
     public IconArrayAdapter(Context context, Integer[] items){
         super(context, android.R.layout.simple_list_item_1, items);

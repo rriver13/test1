@@ -12,11 +12,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class homepg extends AppCompatActivity {
 
-    SubscriptionsDatabase entriesDB = null;
+    final FireStoreDatabase entriesDB = null;
     Toolbar toolbar;
     private Object FloatingActionButton;
+    private FirebaseFirestore mFirestore;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,14 +31,6 @@ public class homepg extends AppCompatActivity {
         toolbar.setTitle(R.string.home_page_title);
         setSupportActionBar(toolbar);
 
-        entriesDB = new SubscriptionsDatabase(this);
-
-        if(entriesDB.length() == 0) {
-            setFragmentBlankDatabase();
-
-        } else {
-            setFragmentSubscriptions();
-        }
 
         FloatingActionButton = findViewById(R.id.FAB);
 
@@ -52,11 +48,6 @@ public class homepg extends AppCompatActivity {
     protected void onPostResume() {
         super.onPostResume();
 
-        if(entriesDB.length() == 0) {
-            setFragmentBlankDatabase();
-        } else {
-            setFragmentSubscriptions();
-        }
     }
 
     @Override
@@ -73,7 +64,7 @@ public class homepg extends AppCompatActivity {
             }
 
             entriesDB.insertSubscription(newSubscription);
-            setFragmentSubscriptions();
+//            setFragmentSubscriptions();
         }
 
         // This is for when the edit subscription activity returns with a updated subscription
@@ -120,30 +111,30 @@ public class homepg extends AppCompatActivity {
                 .replace(R.id.fragment_container, frag).commit();
     }
 
-    public void setFragmentSubscriptions(){
-        Subscription_Section frag = new Subscription_Section();
-
-        frag.setOnBecomesEmptyListener(new Subscription_Section().BecomesEmptyListener() {
-            @Override
-            public void onBecomesEmpty() {
-                setFragmentBlankDatabase();
-            }
-        });
-
-        frag.setOnSubscriptionClickListener(new SubscriptionsFragment.OnSubscriptionClickListener() {
-            @Override
-            public void onSubscriptionClick(Subscriptions subscription, int index, View view) {
-                ActivityOptions options = ActivityOptions
-                        .makeSceneTransitionAnimation(homepg.this, view, "subscriptionView");
-
-                Intent launchActivity = new Intent(homepg.this, Edit_SubscriptionActivity.class);
-                launchActivity.putExtra("subscription", subscription);
-                launchActivity.putExtra("index", index);
-                startActivityForResult(launchActivity, 1, options.toBundle());
-            }
-        });
-
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container, frag).commit();
-    }
+//    public void setFragmentSubscriptions(){
+//        Subscription_Section frag = new Subscription_Section();
+//
+//        frag.setOnBecomesEmptyListener(new Subscription_Section.BecomesEmptyListener() {
+//            @Override
+//            public void onBecomesEmpty() {
+//                setFragmentBlankDatabase();
+//            }
+//        });
+//
+//        frag.setOnSubscriptionClickListener(new Subscription_Section.OnSubscriptionClickListener() {
+//            @Override
+//            public void onSubscriptionClick(Subscriptions subscription, int index, View view) {
+//                ActivityOptions options = ActivityOptions
+//                        .makeSceneTransitionAnimation(homepg.this, view, "subscriptionView");
+//
+//                Intent launchActivity = new Intent(homepg.this, Edit_SubscriptionActivity.class);
+//                launchActivity.putExtra("subscription", subscription);
+//                launchActivity.putExtra("index", index);
+//                startActivityForResult(launchActivity, 1, options.toBundle());
+//            }
+//        });
+//
+//        getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.fragment_container, frag).commit();
+//    }
 }

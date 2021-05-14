@@ -44,7 +44,7 @@ public class SubscriptionTemplateActivity extends AppCompatActivity { private Su
             setContentView(R.layout.subscription_form_image_template);
         }
 
-        final Toolbar toolbar = (Toolbar)findViewById(R.id.edit_subscription_toolbar);
+        final Toolbar toolbar = findViewById(R.id.edit_subscription_toolbar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -57,10 +57,10 @@ public class SubscriptionTemplateActivity extends AppCompatActivity { private Su
             }
         });
 
-        Button deleteSubscription = (Button)findViewById(R.id.deleteSubscription);
+        Button deleteSubscription = findViewById(R.id.deleteSubscription);
         deleteSubscription.setVisibility(View.GONE);
 
-        final EditText description = (EditText)findViewById(R.id.description);
+        final EditText description = findViewById(R.id.description);
         description.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -79,7 +79,7 @@ public class SubscriptionTemplateActivity extends AppCompatActivity { private Su
             }
         });
 
-        final EditText amount = (EditText)findViewById(R.id.amount);
+        final EditText amount = findViewById(R.id.amount);
         amount.setText(newSubscription.getAmountString());
         amount.addTextChangedListener(new TextWatcher() {
             @Override
@@ -127,7 +127,7 @@ public class SubscriptionTemplateActivity extends AppCompatActivity { private Su
         });
 
 
-        final EditText billingCycle = (EditText)findViewById(R.id.billingCycle);
+        final EditText billingCycle = findViewById(R.id.billingCycle);
         billingCycle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -144,7 +144,7 @@ public class SubscriptionTemplateActivity extends AppCompatActivity { private Su
             }
         });
 
-        final EditText firstBillingDate = (EditText)findViewById(R.id.firstBillingDate);
+        final EditText firstBillingDate = findViewById(R.id.firstBillingDate);
         firstBillingDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -169,7 +169,7 @@ public class SubscriptionTemplateActivity extends AppCompatActivity { private Su
             }
         });
 
-        final EditText reminders = (EditText)findViewById(R.id.reminders);
+        final EditText reminders = findViewById(R.id.reminders);
         reminders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -186,7 +186,7 @@ public class SubscriptionTemplateActivity extends AppCompatActivity { private Su
             }
         });
 
-        ViewStub subscriptionStubView = (ViewStub)findViewById(R.id.viewStub);
+        ViewStub subscriptionStubView = findViewById(R.id.viewStub);
         subscription = subscriptionStubView.inflate();
 
         fontAwesome = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");

@@ -80,7 +80,7 @@ public class ChangeColor extends DialogFragment { private final ArrayList<OnFini
 }
 
 class ColorArrayAdapter extends ArrayAdapter<Integer> {
-    Context context;
+    final Context context;
 
     public ColorArrayAdapter(Context context, Integer[] items){
         super(context, android.R.layout.simple_list_item_1, items);

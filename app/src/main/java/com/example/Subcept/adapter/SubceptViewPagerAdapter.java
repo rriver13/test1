@@ -17,8 +17,8 @@ import java.util.List;
 
 public class SubceptViewPagerAdapter extends PagerAdapter {
 
-    Context context;
-    List<survey_Data> survey_data_list;
+    final Context context;
+    final List<survey_Data> survey_data_list;
 
     public SubceptViewPagerAdapter(Context context, List<survey_Data> quiz_data_list){
         this.context = context;

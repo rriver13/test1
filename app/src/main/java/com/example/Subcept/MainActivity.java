@@ -28,10 +28,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private  FirebaseAuth rAuth;
     private ProgressBar progressBar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         register = findViewById(R.id.register_link);
         register.setOnClickListener(this);
@@ -107,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //Email Verification                     
                     if (user.isEmailVerified()){
                         //This will redirect to the User Profile Page if successful
-                        startActivity(new Intent(MainActivity.this, user_Profile.class));
+                        startActivity(new Intent(MainActivity.this, homepg.class));
                     }else{
                         user.sendEmailVerification();
                         Toast.makeText(MainActivity. this, "Go to Email to Verify Account!", Toast.LENGTH_LONG).show();

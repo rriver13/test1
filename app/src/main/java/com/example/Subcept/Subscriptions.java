@@ -32,7 +32,7 @@ import android.widget.TextView;
         public enum billingCycle{
             WEEKLY(0), MONTHLY(1), QUARTERLY(2), YEARLY(3);
 
-            public int value;
+            public final int value;
             billingCycle(int value){
                 this.value = value;
             }
@@ -41,7 +41,7 @@ import android.widget.TextView;
         public enum reminders{
             NEVER(0), ONE_DAY(1), TWO_DAYS(2), THREE_DAYS(3), ONE_WEEK(4), TWO_WEEKS(5), ONE_MONTH(6);
 
-            public int value;
+            public final int value;
             reminders(int value){
                 this.value = value;
             }

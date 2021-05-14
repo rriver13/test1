@@ -11,7 +11,10 @@
     <string name="search_title">Search&#8230;</string>
     <string name="search_hint">Search&#8230;</string>
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <string name="info_string">
+    Subcept is an app for managing paid subscriptions\n\n
+    Uses Firebase Console\n\n
+    </string>
 
     <string-array name="billing_cycles">
         <item>Weekly</item>
@@ -52,5 +55,9 @@
     <string name="edit_subscription_title">Edit subscription</string>
     <string name="okay">OK</string>
     <string name="delete_subscription">DELETE SUBSCRIPTION</string>
+    <string name="title_activity_homepg1">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 
 </resources>

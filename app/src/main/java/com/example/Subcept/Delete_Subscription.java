@@ -19,8 +19,8 @@ public class Delete_Subscription extends AlertDialog.Builder{
         void onDeleteClicked(int index);
     }
 
-    Context context;
-    int index;
+    final Context context;
+    final int index;
 
     AlertDialog dialog;
 

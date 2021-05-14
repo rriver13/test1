@@ -43,7 +43,7 @@ public class Edit_SubscriptionActivity extends AppCompatActivity { Subscriptions
         fontAwesome = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");
 
         if(!(subscription == null)){
-            if(!(subscription.getSubscriptionType() == SubscriptionsDatabase.CUSTOM_TYPE)) {
+            if(!(subscription.getSubscriptionType() == FireStoreDatabase.CUSTOM_TYPE)) {
                 if(subscription.getIconID() == -1){
                     setContentView(R.layout.subscription_form_text_template);
                 }else{
@@ -53,7 +53,7 @@ public class Edit_SubscriptionActivity extends AppCompatActivity { Subscriptions
             else{
                 setContentView(R.layout.subscription_form_custom);
 
-                final EditText serviceName = (EditText)findViewById(R.id.serviceName);
+                final EditText serviceName = findViewById(R.id.serviceName);
                 serviceName.setText(subscription.getName());
                 serviceName.addTextChangedListener(new TextWatcher() {
                     @Override
@@ -74,7 +74,7 @@ public class Edit_SubscriptionActivity extends AppCompatActivity { Subscriptions
                 });
             }
 
-            final EditText description = (EditText)findViewById(R.id.description);
+            final EditText description = findViewById(R.id.description);
             description.setText(subscription.getDescription());
             description.addTextChangedListener(new TextWatcher() {
                 @Override
@@ -94,7 +94,7 @@ public class Edit_SubscriptionActivity extends AppCompatActivity { Subscriptions
                 }
             });
 
-            final EditText amount = (EditText)findViewById(R.id.amount);
+            final EditText amount = findViewById(R.id.amount);
             amount.setText(subscription.getAmountString());
             amount.addTextChangedListener(new TextWatcher() {
                 @Override
@@ -141,7 +141,7 @@ public class Edit_SubscriptionActivity extends AppCompatActivity { Subscriptions
                 }
             });
 
-            final EditText billingCycle = (EditText)findViewById(R.id.billingCycle);
+            final EditText billingCycle = findViewById(R.id.billingCycle);
             billingCycle.setText(subscription.getBillingCycleString(this));
             billingCycle.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -159,7 +159,7 @@ public class Edit_SubscriptionActivity extends AppCompatActivity { Subscriptions
                 }
             });
 
-            final EditText firstBillingDate = (EditText)findViewById(R.id.firstBillingDate);
+            final EditText firstBillingDate = findViewById(R.id.firstBillingDate);
             firstBillingDate.setText(subscription.getFirstBillingDateString(this));
             firstBillingDate.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -185,7 +185,7 @@ public class Edit_SubscriptionActivity extends AppCompatActivity { Subscriptions
                 }
             });
 
-            final EditText reminders = (EditText)findViewById(R.id.reminders);
+            final EditText reminders = findViewById(R.id.reminders);
             reminders.setText(subscription.getReminderString(this));
             reminders.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -204,7 +204,7 @@ public class Edit_SubscriptionActivity extends AppCompatActivity { Subscriptions
             });
         }
 
-        final Toolbar toolbar = (Toolbar)findViewById(R.id.edit_subscription_toolbar);
+        final Toolbar toolbar = findViewById(R.id.edit_subscription_toolbar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -220,7 +220,7 @@ public class Edit_SubscriptionActivity extends AppCompatActivity { Subscriptions
         subscriptionView = ((ViewStub)findViewById(R.id.viewStub)).inflate();
         subscription.fillOutView(subscriptionView, fontAwesome);
 
-        if(subscription.getSubscriptionType() == SubscriptionsDatabase.CUSTOM_TYPE){
+        if(subscription.getSubscriptionType() == FireStoreDatabase.CUSTOM_TYPE){
             ImageView icon = subscriptionView.findViewById(R.id.icon);
             icon.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -289,7 +289,7 @@ public class Edit_SubscriptionActivity extends AppCompatActivity { Subscriptions
     }
 
     public void deleteSubscription(View view) {
-        final SubscriptionsDatabase entriesDB = new SubscriptionsDatabase(this);  // SQL DATABASE MUST CHANGE
+         FireStoreDatabase entriesDB = new FireStoreDatabase(this);
 
         Delete_Subscription deleteDialog = new Delete_Subscription(this, index);
         deleteDialog.setOnDeleteClickedListener(new Delete_Subscription.OnDeleteClicked() {
